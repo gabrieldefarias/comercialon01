@@ -46,6 +46,29 @@ namespace comercialon.classes
             SiglaEstado = siglaEstado; // não obrigatório por causa do "null" de "string siglaEstado = null"
         }
 
+        //======================================================================================== // métodos da classe
+        public void Inserir(int idCliente)
+        {
+            string query = 
+                "insert enderecos " +
+                "values(" +
+                    idCliente+", " +
+                    "'"+Cep+"', " +
+                    "'"+Logradouro+"', " +
+                    "'"+Numero+"', " +
+                    "'"+Complemento+"', " +
+                    "'"+Bairro+"', " +
+                    "'"+Cidade+"', " +
+                    "'"+Estado+"', " +
+                    "'"+SiglaEstado+"', " +
+                    "'"+Tipo+"'" +
+                ")";
+            var cmd = Banco.Abrir();
+            cmd.CommandType = System.Data.CommandType.Text;
+            cmd.CommandText = query;
+            cmd.ExecuteNonQuery();
+        }
+
         public static List<Endereco> ListaEnderecos(int id = 0, int limit = 0)
         {
             List<Endereco> lista = new List<Endereco>(); // código buscar os endereços

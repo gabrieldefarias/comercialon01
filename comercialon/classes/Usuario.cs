@@ -40,9 +40,7 @@ namespace comercialon.classes
         //======================================================================================== // metodos de classe
 
         public void Inserir()
-        {
-
-        }
+        { }
         //========================================================================== INSERIR - FIM
         public List<Usuario> ListarTodos()
         {
