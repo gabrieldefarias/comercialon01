@@ -91,9 +91,11 @@
   <ItemGroup>
     <Compile Include="classes\Banco.cs" />
     <Compile Include="classes\Caixa.cs" />
+    <Compile Include="classes\Categoria.cs" />
     <Compile Include="classes\Cliente.cs" />
     <Compile Include="classes\Endereco.cs" />
     <Compile Include="classes\ItemPedido.cs" />
+    <Compile Include="classes\Marca.cs" />
     <Compile Include="classes\Pagamento.cs" />
     <Compile Include="classes\Pedido.cs" />
     <Compile Include="classes\Produto.cs" />

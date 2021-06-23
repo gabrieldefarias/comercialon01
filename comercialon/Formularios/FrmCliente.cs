@@ -104,7 +104,7 @@ namespace comercialon
 
         private void mskCpf_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
-
+            
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -142,9 +142,98 @@ namespace comercialon
 
         }
 
-        private void textBox7_TextChanged(object sender, EventArgs e)
+        private void cmbTipo_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtCep_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtLogradouro_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNumero_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtComplemento_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBairro_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCidade_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEstado_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUF_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var lista = Endereco.ListaEnderecos(0, 0, 10);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var lista = Endereco.ListaEnderecos(int.Parse(txtID.Text), 0, 10);
+            foreach (var item in lista)
+            {
+                listBox1.Items.Add(item.IdCliente + " " + item.Logradouro);
+            }
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void txtIdMarca_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNomeMarca_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void txtSigla_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Marca marca = new Marca(
+                txtNomeMarca.Text,
+                txtSigla.Text
+            );
+            marca.Inserir();
+            MessageBox.Show("Marca " + marca.Id + " inserir");
         }
     }
 }

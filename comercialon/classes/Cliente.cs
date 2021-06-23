@@ -10,7 +10,7 @@ namespace comercialon.classes
         public string Cpf { get; set; }
         public string Email{ get; set; }
         public string Telefone { get; set; }
-        public List<Endereco> Endereco { get; set; } // lista de endereços
+        public List<Endereco> Enderecos { get; set; } // lista de endereços
         public bool Ativo { get; set; }
         //======================================================================================== // gerando os construtores
 
@@ -26,7 +26,7 @@ namespace comercialon.classes
             Cpf = cpf;
             Email = email;
             Telefone = telefone;
-            Endereco = endereco;
+            Enderecos = endereco;
             Ativo = ativo;
         }
 
@@ -36,7 +36,7 @@ namespace comercialon.classes
             Cpf = cpf;
             Email = email;
             Telefone = telefone;
-            Endereco = endereco;
+            Enderecos = endereco;
             Ativo = ativo;
         }
         //======================================================================================== // métodos da classe
@@ -48,7 +48,7 @@ namespace comercialon.classes
             {
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.CommandText = "insert " +
-                    "clientes (nome, cpf, email, telefone, ativo)" +
+                    "clientes (nome, cpf, email, telefone, ativo) " +
                     "values ('"+Nome+"', '"+Cpf+"', '"+Email+"', '"+Telefone+"', default);";
                 cmd.ExecuteNonQuery();
                 cmd.CommandText = "select @@identity";
@@ -64,12 +64,41 @@ namespace comercialon.classes
         public List<Cliente> ListarTodos() // LISTAR CLIENTE - INICIO
         {
             List<Cliente> lista = new List<Cliente>(); // codigo de listar cliente
-            return lista; // retornar a lista de cliente
+            string query = "select * from clientes";
+            var cmd = Banco.Abrir();
+            cmd.CommandText = query;
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                lista.Add(new Cliente(
+                    dr.GetInt32(0),
+                    dr.GetString(1),
+                    dr.GetString(2),
+                    dr.GetString(3),
+                    dr.GetString(4),
+                    dr.GetBoolean(5),
+                    Endereco.ListaEnderecos(dr.GetInt32(0))
+                ));
+            }
+            return lista;
         }
         //========================================================================== LISTAR CLIENTE - FIM
-        public void BuscarId(int id) // BUSCAR ID - INICIO
+        public void BuscarPorId(int id) // BUSCAR ID - INICIO
         {
-            
+            string query = "select * from clientes where id = " + id;
+            var cmd = Banco.Abrir();
+            cmd.CommandText = query;
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                Id = dr.GetInt32(0);
+                Nome = dr.GetString(1);
+                Cpf = dr.GetString(2);
+                Email = dr.GetString(3);
+                Telefone = dr.GetString(4);
+                Ativo = dr.GetBoolean(5);
+                Enderecos = Endereco.ListaEnderecos(id);
+            }
         }
         //========================================================================== BUSCAR ID - FIM
     }
