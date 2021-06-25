@@ -42,5 +42,27 @@ namespace comercialon.Formularios
             marca.Inserir();
             MessageBox.Show("Marca " + marca.Id + " inserir");
         }
+
+        private void btnEditarAlterar_Click(object sender, EventArgs e)
+        {
+            Marca marca = new Marca();
+            marca.Id = int.Parse(txtIdMarca.Text);
+            marca.Nome = txtNomeMarca.Text;
+            marca.Sigla = txtSigla.Text;
+            if (marca.Alterar())
+            {
+                MessageBox.Show("Marca alterado com sucesso!");
+                LimparCampos();
+            }
+            else
+            {
+                MessageBox.Show("Falha ao alterar a marca!");
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

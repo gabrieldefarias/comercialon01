@@ -36,12 +36,16 @@
             this.txtNomeMarca = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
+            this.btnEditarAlterar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.Controls.Add(this.btnEditarAlterar);
             this.groupBox3.Controls.Add(this.button2);
             this.groupBox3.Controls.Add(this.txtSigla);
             this.groupBox3.Controls.Add(this.txtIdMarca);
@@ -51,14 +55,14 @@
             this.groupBox3.Controls.Add(this.label17);
             this.groupBox3.Location = new System.Drawing.Point(12, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(329, 98);
+            this.groupBox3.Size = new System.Drawing.Size(481, 272);
             this.groupBox3.TabIndex = 20;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Marca";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(9, 58);
+            this.button2.Location = new System.Drawing.Point(9, 82);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(89, 23);
             this.button2.TabIndex = 6;
@@ -68,7 +72,7 @@
             // 
             // txtSigla
             // 
-            this.txtSigla.Location = new System.Drawing.Point(221, 32);
+            this.txtSigla.Location = new System.Drawing.Point(115, 56);
             this.txtSigla.Name = "txtSigla";
             this.txtSigla.Size = new System.Drawing.Size(100, 20);
             this.txtSigla.TabIndex = 5;
@@ -76,16 +80,17 @@
             // 
             // txtIdMarca
             // 
-            this.txtIdMarca.Location = new System.Drawing.Point(9, 32);
+            this.txtIdMarca.Location = new System.Drawing.Point(33, 13);
             this.txtIdMarca.Name = "txtIdMarca";
-            this.txtIdMarca.Size = new System.Drawing.Size(100, 20);
+            this.txtIdMarca.ReadOnly = true;
+            this.txtIdMarca.Size = new System.Drawing.Size(76, 20);
             this.txtIdMarca.TabIndex = 3;
             this.txtIdMarca.TextChanged += new System.EventHandler(this.txtIdMarca_TextChanged);
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(218, 16);
+            this.label18.Location = new System.Drawing.Point(112, 40);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(33, 13);
             this.label18.TabIndex = 2;
@@ -93,7 +98,7 @@
             // 
             // txtNomeMarca
             // 
-            this.txtNomeMarca.Location = new System.Drawing.Point(115, 32);
+            this.txtNomeMarca.Location = new System.Drawing.Point(9, 56);
             this.txtNomeMarca.Name = "txtNomeMarca";
             this.txtNomeMarca.Size = new System.Drawing.Size(100, 20);
             this.txtNomeMarca.TabIndex = 4;
@@ -111,17 +116,37 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(112, 16);
+            this.label17.Location = new System.Drawing.Point(6, 40);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(38, 13);
             this.label17.TabIndex = 1;
             this.label17.Text = "Nome:";
             // 
+            // btnEditarAlterar
+            // 
+            this.btnEditarAlterar.Location = new System.Drawing.Point(104, 82);
+            this.btnEditarAlterar.Name = "btnEditarAlterar";
+            this.btnEditarAlterar.Size = new System.Drawing.Size(75, 23);
+            this.btnEditarAlterar.TabIndex = 7;
+            this.btnEditarAlterar.Text = "Editar";
+            this.btnEditarAlterar.UseVisualStyleBackColor = true;
+            this.btnEditarAlterar.Click += new System.EventHandler(this.btnEditarAlterar_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(115, 11);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "...";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FrmMarcas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(361, 129);
+            this.ClientSize = new System.Drawing.Size(580, 343);
             this.Controls.Add(this.groupBox3);
             this.Name = "FrmMarcas";
             this.Text = "FrmMarcas";
@@ -141,5 +166,7 @@
         private System.Windows.Forms.TextBox txtNomeMarca;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button btnEditarAlterar;
+        private System.Windows.Forms.Button button1;
     }
 }

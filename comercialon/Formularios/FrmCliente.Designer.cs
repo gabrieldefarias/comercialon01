@@ -39,7 +39,7 @@
             this.txtID = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnInserir = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chkAtivo = new System.Windows.Forms.CheckBox();
             this.mskCpf = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -62,7 +62,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.cmbTipo = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.btnEditarAlterar = new System.Windows.Forms.Button();
+            this.btnListar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -143,16 +145,17 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(50, 27);
+            this.txtID.Location = new System.Drawing.Point(50, 26);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(49, 20);
+            this.txtID.ReadOnly = true;
+            this.txtID.Size = new System.Drawing.Size(64, 20);
             this.txtID.TabIndex = 9;
             this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(176, 30);
+            this.label6.Location = new System.Drawing.Point(271, 29);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(34, 13);
             this.label6.TabIndex = 10;
@@ -161,24 +164,24 @@
             // 
             // btnInserir
             // 
-            this.btnInserir.Enabled = false;
             this.btnInserir.Location = new System.Drawing.Point(9, 155);
             this.btnInserir.Name = "btnInserir";
             this.btnInserir.Size = new System.Drawing.Size(75, 23);
-            this.btnInserir.TabIndex = 12;
-            this.btnInserir.Text = "Inserir";
+            this.btnInserir.TabIndex = 0;
+            this.btnInserir.Text = "&Inserir";
             this.btnInserir.UseVisualStyleBackColor = true;
             this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
-            // checkBox1
+            // chkAtivo
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(216, 30);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 13;
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.chkAtivo.AutoSize = true;
+            this.chkAtivo.Enabled = false;
+            this.chkAtivo.Location = new System.Drawing.Point(311, 29);
+            this.chkAtivo.Name = "chkAtivo";
+            this.chkAtivo.Size = new System.Drawing.Size(15, 14);
+            this.chkAtivo.TabIndex = 11;
+            this.chkAtivo.UseVisualStyleBackColor = true;
+            this.chkAtivo.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // mskCpf
             // 
@@ -186,16 +189,17 @@
             this.mskCpf.Mask = "000.000.000-00";
             this.mskCpf.Name = "mskCpf";
             this.mskCpf.Size = new System.Drawing.Size(83, 20);
-            this.mskCpf.TabIndex = 14;
+            this.mskCpf.TabIndex = 6;
             this.mskCpf.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mskCpf_MaskInputRejected);
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.mskCpf);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Controls.Add(this.chkAtivo);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label6);
@@ -210,9 +214,13 @@
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Identificação";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnCancelar);
+            this.groupBox2.Controls.Add(this.btnListar);
+            this.groupBox2.Controls.Add(this.btnEditarAlterar);
             this.groupBox2.Controls.Add(this.txtUF);
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.txtCep);
@@ -237,7 +245,7 @@
             this.groupBox2.Size = new System.Drawing.Size(507, 189);
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Endereços";
+            this.groupBox2.Text = "Endereço";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // txtUF
@@ -402,30 +410,47 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(553, 12);
+            this.button1.Location = new System.Drawing.Point(120, 24);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 23);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Listar endereços";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "...";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // listBox1
+            // btnEditarAlterar
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(553, 41);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(357, 290);
-            this.listBox1.TabIndex = 18;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.btnEditarAlterar.Location = new System.Drawing.Point(90, 155);
+            this.btnEditarAlterar.Name = "btnEditarAlterar";
+            this.btnEditarAlterar.Size = new System.Drawing.Size(75, 23);
+            this.btnEditarAlterar.TabIndex = 18;
+            this.btnEditarAlterar.Text = "&Editar";
+            this.btnEditarAlterar.UseVisualStyleBackColor = true;
+            this.btnEditarAlterar.Click += new System.EventHandler(this.btnEditarAlterar_Click);
+            // 
+            // btnListar
+            // 
+            this.btnListar.Location = new System.Drawing.Point(171, 155);
+            this.btnListar.Name = "btnListar";
+            this.btnListar.Size = new System.Drawing.Size(75, 23);
+            this.btnListar.TabIndex = 19;
+            this.btnListar.Text = "&Listar";
+            this.btnListar.UseVisualStyleBackColor = true;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(252, 155);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 20;
+            this.btnCancelar.Text = "&Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(931, 347);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1148, 562);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
@@ -452,7 +477,7 @@
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnInserir;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chkAtivo;
         private System.Windows.Forms.MaskedTextBox mskCpf;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -475,7 +500,9 @@
         private System.Windows.Forms.TextBox txtUF;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnListar;
+        private System.Windows.Forms.Button btnEditarAlterar;
     }
 }
 

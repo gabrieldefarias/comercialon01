@@ -31,30 +31,30 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.menuPrincipal = new System.Windows.Forms.MenuStrip();
             this.tsmCadastros = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmCadastrosCliente = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmCadastrosProdutos = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmCadastrosProdutosNovo = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmCadastrosProdutosLista = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmCadastrosUsuarios = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmCadastrosMarcas = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmCadastrosMarcasNovo = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmCadastrosMarcasLista = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmCadastrosCategorias = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmCadastrosCategoriasNovo = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmCadastrosCategoriasLista = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmOperacoes = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmMovimento = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmRelatorios = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmConfiguracoes = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmAjuda = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmCadastrosCliente = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmCadastrosProdutos = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmCadastrosUsuarios = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmCadastrosProdutosNovo = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmCadastrosProdutosLista = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmCadastrosMarcas = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmCadastrosCategorias = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmCadastrosMarcasNovo = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmCadastrosMarcasLista = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmCadastrosCategoriasNovo = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmCadastrosCategoriasLista = new System.Windows.Forms.ToolStripMenuItem();
             this.menuPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 544);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 545);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1250, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1275, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -69,7 +69,7 @@
             this.tsmAjuda});
             this.menuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.menuPrincipal.Name = "menuPrincipal";
-            this.menuPrincipal.Size = new System.Drawing.Size(1250, 24);
+            this.menuPrincipal.Size = new System.Drawing.Size(1275, 24);
             this.menuPrincipal.TabIndex = 1;
             this.menuPrincipal.Text = "menuStrip1";
             // 
@@ -85,6 +85,88 @@
             this.tsmCadastros.Name = "tsmCadastros";
             this.tsmCadastros.Size = new System.Drawing.Size(71, 20);
             this.tsmCadastros.Text = "&Cadastros";
+            // 
+            // tsmCadastrosCliente
+            // 
+            this.tsmCadastrosCliente.Name = "tsmCadastrosCliente";
+            this.tsmCadastrosCliente.Size = new System.Drawing.Size(180, 22);
+            this.tsmCadastrosCliente.Text = "&Clientes";
+            this.tsmCadastrosCliente.Click += new System.EventHandler(this.tsmCadastrosCliente_Click);
+            // 
+            // tsmCadastrosProdutos
+            // 
+            this.tsmCadastrosProdutos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmCadastrosProdutosNovo,
+            this.tsmCadastrosProdutosLista});
+            this.tsmCadastrosProdutos.Name = "tsmCadastrosProdutos";
+            this.tsmCadastrosProdutos.Size = new System.Drawing.Size(180, 22);
+            this.tsmCadastrosProdutos.Text = "&Produtos";
+            this.tsmCadastrosProdutos.Click += new System.EventHandler(this.tsmCadastrosProdutos_Click);
+            // 
+            // tsmCadastrosProdutosNovo
+            // 
+            this.tsmCadastrosProdutosNovo.Name = "tsmCadastrosProdutosNovo";
+            this.tsmCadastrosProdutosNovo.Size = new System.Drawing.Size(180, 22);
+            this.tsmCadastrosProdutosNovo.Text = "&Novo";
+            this.tsmCadastrosProdutosNovo.Click += new System.EventHandler(this.tsmCadastrosProdutosNovo_Click_1);
+            // 
+            // tsmCadastrosProdutosLista
+            // 
+            this.tsmCadastrosProdutosLista.Name = "tsmCadastrosProdutosLista";
+            this.tsmCadastrosProdutosLista.Size = new System.Drawing.Size(180, 22);
+            this.tsmCadastrosProdutosLista.Text = "&Lista";
+            // 
+            // tsmCadastrosUsuarios
+            // 
+            this.tsmCadastrosUsuarios.Name = "tsmCadastrosUsuarios";
+            this.tsmCadastrosUsuarios.Size = new System.Drawing.Size(180, 22);
+            this.tsmCadastrosUsuarios.Text = "&Usuários";
+            // 
+            // tsmCadastrosMarcas
+            // 
+            this.tsmCadastrosMarcas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmCadastrosMarcasNovo,
+            this.tsmCadastrosMarcasLista});
+            this.tsmCadastrosMarcas.Name = "tsmCadastrosMarcas";
+            this.tsmCadastrosMarcas.Size = new System.Drawing.Size(180, 22);
+            this.tsmCadastrosMarcas.Text = "&Marcas";
+            this.tsmCadastrosMarcas.Click += new System.EventHandler(this.tsmCadastrosMarcas_Click);
+            // 
+            // tsmCadastrosMarcasNovo
+            // 
+            this.tsmCadastrosMarcasNovo.Name = "tsmCadastrosMarcasNovo";
+            this.tsmCadastrosMarcasNovo.Size = new System.Drawing.Size(180, 22);
+            this.tsmCadastrosMarcasNovo.Text = "&Novo";
+            this.tsmCadastrosMarcasNovo.Click += new System.EventHandler(this.tsmCadastrosMarcasNovo_Click);
+            // 
+            // tsmCadastrosMarcasLista
+            // 
+            this.tsmCadastrosMarcasLista.Name = "tsmCadastrosMarcasLista";
+            this.tsmCadastrosMarcasLista.Size = new System.Drawing.Size(180, 22);
+            this.tsmCadastrosMarcasLista.Text = "&Lista";
+            // 
+            // tsmCadastrosCategorias
+            // 
+            this.tsmCadastrosCategorias.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmCadastrosCategoriasNovo,
+            this.tsmCadastrosCategoriasLista});
+            this.tsmCadastrosCategorias.Name = "tsmCadastrosCategorias";
+            this.tsmCadastrosCategorias.Size = new System.Drawing.Size(180, 22);
+            this.tsmCadastrosCategorias.Text = "&Categoria";
+            this.tsmCadastrosCategorias.Click += new System.EventHandler(this.tsmCadastrosCategorias_Click);
+            // 
+            // tsmCadastrosCategoriasNovo
+            // 
+            this.tsmCadastrosCategoriasNovo.Name = "tsmCadastrosCategoriasNovo";
+            this.tsmCadastrosCategoriasNovo.Size = new System.Drawing.Size(180, 22);
+            this.tsmCadastrosCategoriasNovo.Text = "&Novo";
+            this.tsmCadastrosCategoriasNovo.Click += new System.EventHandler(this.tsmCadastrosCategoriasNovo_Click);
+            // 
+            // tsmCadastrosCategoriasLista
+            // 
+            this.tsmCadastrosCategoriasLista.Name = "tsmCadastrosCategoriasLista";
+            this.tsmCadastrosCategoriasLista.Size = new System.Drawing.Size(180, 22);
+            this.tsmCadastrosCategoriasLista.Text = "&Lista";
             // 
             // tsmOperacoes
             // 
@@ -116,93 +198,11 @@
             this.tsmAjuda.Size = new System.Drawing.Size(50, 20);
             this.tsmAjuda.Text = "&Ajuda";
             // 
-            // tsmCadastrosCliente
-            // 
-            this.tsmCadastrosCliente.Name = "tsmCadastrosCliente";
-            this.tsmCadastrosCliente.Size = new System.Drawing.Size(180, 22);
-            this.tsmCadastrosCliente.Text = "&Clientes";
-            this.tsmCadastrosCliente.Click += new System.EventHandler(this.tsmCadastrosCliente_Click);
-            // 
-            // tsmCadastrosProdutos
-            // 
-            this.tsmCadastrosProdutos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmCadastrosProdutosNovo,
-            this.tsmCadastrosProdutosLista});
-            this.tsmCadastrosProdutos.Name = "tsmCadastrosProdutos";
-            this.tsmCadastrosProdutos.Size = new System.Drawing.Size(180, 22);
-            this.tsmCadastrosProdutos.Text = "&Produtos";
-            this.tsmCadastrosProdutos.Click += new System.EventHandler(this.tsmCadastrosProdutos_Click);
-            // 
-            // tsmCadastrosUsuarios
-            // 
-            this.tsmCadastrosUsuarios.Name = "tsmCadastrosUsuarios";
-            this.tsmCadastrosUsuarios.Size = new System.Drawing.Size(180, 22);
-            this.tsmCadastrosUsuarios.Text = "&Usuários";
-            // 
-            // tsmCadastrosProdutosNovo
-            // 
-            this.tsmCadastrosProdutosNovo.Name = "tsmCadastrosProdutosNovo";
-            this.tsmCadastrosProdutosNovo.Size = new System.Drawing.Size(180, 22);
-            this.tsmCadastrosProdutosNovo.Text = "&Novo";
-            this.tsmCadastrosProdutosNovo.Click += new System.EventHandler(this.tsmCadastrosProdutosNovo_Click_1);
-            // 
-            // tsmCadastrosProdutosLista
-            // 
-            this.tsmCadastrosProdutosLista.Name = "tsmCadastrosProdutosLista";
-            this.tsmCadastrosProdutosLista.Size = new System.Drawing.Size(180, 22);
-            this.tsmCadastrosProdutosLista.Text = "&Lista";
-            // 
-            // tsmCadastrosMarcas
-            // 
-            this.tsmCadastrosMarcas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmCadastrosMarcasNovo,
-            this.tsmCadastrosMarcasLista});
-            this.tsmCadastrosMarcas.Name = "tsmCadastrosMarcas";
-            this.tsmCadastrosMarcas.Size = new System.Drawing.Size(180, 22);
-            this.tsmCadastrosMarcas.Text = "&Marcas";
-            this.tsmCadastrosMarcas.Click += new System.EventHandler(this.tsmCadastrosMarcas_Click);
-            // 
-            // tsmCadastrosCategorias
-            // 
-            this.tsmCadastrosCategorias.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmCadastrosCategoriasNovo,
-            this.tsmCadastrosCategoriasLista});
-            this.tsmCadastrosCategorias.Name = "tsmCadastrosCategorias";
-            this.tsmCadastrosCategorias.Size = new System.Drawing.Size(180, 22);
-            this.tsmCadastrosCategorias.Text = "&Categoria";
-            this.tsmCadastrosCategorias.Click += new System.EventHandler(this.tsmCadastrosCategorias_Click);
-            // 
-            // tsmCadastrosMarcasNovo
-            // 
-            this.tsmCadastrosMarcasNovo.Name = "tsmCadastrosMarcasNovo";
-            this.tsmCadastrosMarcasNovo.Size = new System.Drawing.Size(180, 22);
-            this.tsmCadastrosMarcasNovo.Text = "&Novo";
-            this.tsmCadastrosMarcasNovo.Click += new System.EventHandler(this.tsmCadastrosMarcasNovo_Click);
-            // 
-            // tsmCadastrosMarcasLista
-            // 
-            this.tsmCadastrosMarcasLista.Name = "tsmCadastrosMarcasLista";
-            this.tsmCadastrosMarcasLista.Size = new System.Drawing.Size(103, 22);
-            this.tsmCadastrosMarcasLista.Text = "&Lista";
-            // 
-            // tsmCadastrosCategoriasNovo
-            // 
-            this.tsmCadastrosCategoriasNovo.Name = "tsmCadastrosCategoriasNovo";
-            this.tsmCadastrosCategoriasNovo.Size = new System.Drawing.Size(180, 22);
-            this.tsmCadastrosCategoriasNovo.Text = "&Novo";
-            this.tsmCadastrosCategoriasNovo.Click += new System.EventHandler(this.tsmCadastrosCategoriasNovo_Click);
-            // 
-            // tsmCadastrosCategoriasLista
-            // 
-            this.tsmCadastrosCategoriasLista.Name = "tsmCadastrosCategoriasLista";
-            this.tsmCadastrosCategoriasLista.Size = new System.Drawing.Size(180, 22);
-            this.tsmCadastrosCategoriasLista.Text = "&Lista";
-            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1250, 566);
+            this.ClientSize = new System.Drawing.Size(1275, 567);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuPrincipal);
             this.IsMdiContainer = true;

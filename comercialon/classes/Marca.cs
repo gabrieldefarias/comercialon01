@@ -44,6 +44,7 @@ namespace comercialon.classes
                 Id = Convert.ToInt32(cmd.ExecuteScalar());
             }
         }
+        //========================================================================================FIM
 
         public List<Marca> ListarTodos() // LISTAR TODOS - INICIO
         {
@@ -61,6 +62,37 @@ namespace comercialon.classes
                 ));
             }
             return lista;
+        }
+        //========================================================================================FIM
+
+        public void BuscarPorId(int id) // BUSCAR POR ID
+        {
+            string query = "select * from marcas where id = " + id;
+            var cmd = Banco.Abrir();
+            cmd.CommandText = query;
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                Id = dr.GetInt32(0);
+                Nome = dr.GetString(1);
+                Sigla = dr.GetString(2);
+            }
+        }
+        //========================================================================================FIM
+
+        public bool Alterar()
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandText = "update marcas set nome = '"+Nome+"', sigla = '"+Sigla+" where id = " + Id;
+            int ret = cmd.ExecuteNonQuery();
+            if (ret == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

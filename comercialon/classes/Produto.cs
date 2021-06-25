@@ -37,9 +37,7 @@ namespace comercialon.classes
         //======================================================================================== // metodos de classe
 
         public void Inserir()
-        {
-
-        }
+        { }
 
         public List<Produto> ListarTodos()
         {

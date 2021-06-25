@@ -56,9 +56,20 @@ namespace comercialon.classes
             }
         }
         //========================================================================== INSERIR - FIM
-        public bool Alterar(int id) //  ALTERAR - INICIO
+        public bool Alterar() //  ALTERAR - INICIO
         {
-            return true;
+            string ativo = Ativo ? "1" : "0";
+            var cmd = Banco.Abrir();
+            cmd.CommandText = "update clientes set nome = '"+Nome+"', email = '"+Email+"', telefone = '"+Telefone+"', ativo = "+ativo+" where id = "+Id;
+            int ret = cmd.ExecuteNonQuery();
+            if (ret==1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         //========================================================================== ALTERAR - FIM
         public List<Cliente> ListarTodos() // LISTAR CLIENTE - INICIO
