@@ -44,5 +44,23 @@ namespace comercialon.classes
                 Id = Convert.ToInt32(cmd.ExecuteScalar());
             }
         }
+
+        public List<Marca> ListarTodos() // LISTAR TODOS - INICIO
+        {
+            List<Marca> lista = new List<Marca>();
+            string query = "select * from marcas";
+            var cmd = Banco.Abrir();
+            cmd.CommandText = query;
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                lista.Add(new Marca(
+                    dr.GetInt32(0),
+                    dr.GetString(1),
+                    dr.GetString(2)
+                ));
+            }
+            return lista;
+        }
     }
 }

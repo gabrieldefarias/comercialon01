@@ -24,17 +24,7 @@ namespace comercialon
 
         }
 
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCpf_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -199,41 +189,6 @@ namespace comercialon
             {
                 listBox1.Items.Add(item.IdCliente + " " + item.Logradouro);
             }
-        }
-
-        private void groupBox3_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label18_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void txtIdMarca_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNomeMarca_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void txtSigla_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Marca marca = new Marca(
-                txtNomeMarca.Text,
-                txtSigla.Text
-            );
-            marca.Inserir();
-            MessageBox.Show("Marca " + marca.Id + " inserir");
         }
     }
 }

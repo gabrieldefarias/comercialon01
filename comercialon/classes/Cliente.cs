@@ -63,7 +63,7 @@ namespace comercialon.classes
         //========================================================================== ALTERAR - FIM
         public List<Cliente> ListarTodos() // LISTAR CLIENTE - INICIO
         {
-            List<Cliente> lista = new List<Cliente>(); // codigo de listar cliente
+            List<Cliente> lista = new List<Cliente>();
             string query = "select * from clientes";
             var cmd = Banco.Abrir();
             cmd.CommandText = query;
