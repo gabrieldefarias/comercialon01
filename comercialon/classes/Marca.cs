@@ -45,7 +45,6 @@ namespace comercialon.classes
             }
         }
         //========================================================================================FIM
-
         public List<Marca> ListarTodos() // LISTAR TODOS - INICIO
         {
             List<Marca> lista = new List<Marca>();
@@ -64,7 +63,6 @@ namespace comercialon.classes
             return lista;
         }
         //========================================================================================FIM
-
         public void BuscarPorId(int id) // BUSCAR POR ID
         {
             string query = "select * from marcas where id = " + id;
@@ -79,11 +77,10 @@ namespace comercialon.classes
             }
         }
         //========================================================================================FIM
-
         public bool Alterar()
         {
             var cmd = Banco.Abrir();
-            cmd.CommandText = "update marcas set nome = '"+Nome+"', sigla = '"+Sigla+" where id = " + Id;
+            cmd.CommandText = "update marcas set nome = '"+Nome+"', sigla = '"+Sigla+"' where id = " + Id;
             int ret = cmd.ExecuteNonQuery();
             if (ret == 1)
             {

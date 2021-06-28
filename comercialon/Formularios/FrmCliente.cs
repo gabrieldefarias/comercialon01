@@ -221,7 +221,7 @@ namespace comercialon
                 }
                 else
                 {
-                    MessageBox.Show("Cliente não encontrado");
+                    MessageBox.Show("Cliente não encontrado!");
                 }
             }
         }

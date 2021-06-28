@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace comercialon.classes
 {
     class Categoria
-    {// declaração de propriedades
+    { // declaração de propriedades
         public int Id { get; set; }
         public String Nome { get; set; }
         public string Sigla { get; set; }
@@ -42,6 +42,53 @@ namespace comercialon.classes
                 cmd.ExecuteNonQuery();
                 cmd.CommandText = "select @@identity";
                 Id = Convert.ToInt32(cmd.ExecuteScalar());
+            }
+        }
+        //========================================================================================FIM
+        public bool Alterar()
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandText = "update categorias set nome = '" + Nome + "', sigla = '" + Sigla + "' where id = " + Id;
+            int ret = cmd.ExecuteNonQuery();
+            if (ret == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        //========================================================================================FIM
+        public List<Categoria> ListarTodos() // LISTAR TODOS - INICIO
+        {
+            List<Categoria> lista = new List<Categoria>();
+            string query = "select * from categorias";
+            var cmd = Banco.Abrir();
+            cmd.CommandText = query;
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                lista.Add(new Categoria(
+                    dr.GetInt32(0),
+                    dr.GetString(1),
+                    dr.GetString(2)
+                ));
+            }
+            return lista;
+        }
+        //========================================================================================FIM
+        public void BuscarPorId(int id) // BUSCAR POR ID
+        {
+            string query = "select * from categorias where id = " + id;
+            var cmd = Banco.Abrir();
+            cmd.CommandText = query;
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                Id = dr.GetInt32(0);
+                Nome = dr.GetString(1);
+                Sigla = dr.GetString(2);
             }
         }
     }

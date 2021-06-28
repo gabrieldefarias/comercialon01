@@ -42,7 +42,11 @@
             this.chkAtivo = new System.Windows.Forms.CheckBox();
             this.mskCpf = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnListar = new System.Windows.Forms.Button();
+            this.btnEditarAlterar = new System.Windows.Forms.Button();
             this.txtUF = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.txtCep = new System.Windows.Forms.TextBox();
@@ -61,10 +65,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.cmbTipo = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnEditarAlterar = new System.Windows.Forms.Button();
-            this.btnListar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -216,6 +216,16 @@
             this.groupBox1.Text = "Identificação";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(120, 24);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "...";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnCancelar);
@@ -247,6 +257,34 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Endereço";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(252, 155);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 20;
+            this.btnCancelar.Text = "&Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // btnListar
+            // 
+            this.btnListar.Location = new System.Drawing.Point(171, 155);
+            this.btnListar.Name = "btnListar";
+            this.btnListar.Size = new System.Drawing.Size(75, 23);
+            this.btnListar.TabIndex = 19;
+            this.btnListar.Text = "&Listar";
+            this.btnListar.UseVisualStyleBackColor = true;
+            // 
+            // btnEditarAlterar
+            // 
+            this.btnEditarAlterar.Location = new System.Drawing.Point(90, 155);
+            this.btnEditarAlterar.Name = "btnEditarAlterar";
+            this.btnEditarAlterar.Size = new System.Drawing.Size(75, 23);
+            this.btnEditarAlterar.TabIndex = 18;
+            this.btnEditarAlterar.Text = "&Editar";
+            this.btnEditarAlterar.UseVisualStyleBackColor = true;
+            this.btnEditarAlterar.Click += new System.EventHandler(this.btnEditarAlterar_Click);
             // 
             // txtUF
             // 
@@ -408,49 +446,11 @@
             this.cmbTipo.TabIndex = 0;
             this.cmbTipo.SelectedIndexChanged += new System.EventHandler(this.cmbTipo_SelectedIndexChanged);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(120, 24);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "...";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // btnEditarAlterar
-            // 
-            this.btnEditarAlterar.Location = new System.Drawing.Point(90, 155);
-            this.btnEditarAlterar.Name = "btnEditarAlterar";
-            this.btnEditarAlterar.Size = new System.Drawing.Size(75, 23);
-            this.btnEditarAlterar.TabIndex = 18;
-            this.btnEditarAlterar.Text = "&Editar";
-            this.btnEditarAlterar.UseVisualStyleBackColor = true;
-            this.btnEditarAlterar.Click += new System.EventHandler(this.btnEditarAlterar_Click);
-            // 
-            // btnListar
-            // 
-            this.btnListar.Location = new System.Drawing.Point(171, 155);
-            this.btnListar.Name = "btnListar";
-            this.btnListar.Size = new System.Drawing.Size(75, 23);
-            this.btnListar.TabIndex = 19;
-            this.btnListar.Text = "&Listar";
-            this.btnListar.UseVisualStyleBackColor = true;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(252, 155);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 20;
-            this.btnCancelar.Text = "&Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1148, 562);
+            this.ClientSize = new System.Drawing.Size(569, 353);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";

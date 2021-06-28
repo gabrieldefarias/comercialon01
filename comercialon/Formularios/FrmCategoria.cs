@@ -42,5 +42,69 @@ namespace comercialon.Formularios
             categoria.Inserir();
             MessageBox.Show("Categoria " + categoria.Id + " inserir");
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (button1.Text=="...")
+            {
+                txtIdCategoria.ReadOnly = false;
+                txtIdCategoria.Focus();
+                BloquearControles();
+                button1.Text = "Buscar";
+            }
+            else
+            {
+                txtIdCategoria.ReadOnly = true;
+                txtIdCategoria.Focus();
+                DesbloquearControles();
+                button1.Text = "...";
+                Categoria categoria = new Categoria();
+                categoria.BuscarPorId(int.Parse(txtIdCategoria.Text));
+                if (categoria.Id>0)
+                {
+                    txtNomeCategoria.Text = categoria.Nome;
+                    txtSiglaCategoria.Text = categoria.Sigla;
+                }
+                else
+                {
+                    MessageBox.Show("Categoria não encontrado!");
+                }
+            }
+        }
+
+        private void btnEditarAlterar_Click(object sender, EventArgs e)
+        {
+            Categoria categoria = new Categoria();
+            categoria.Id = int.Parse(txtIdCategoria.Text);
+            categoria.Nome = txtNomeCategoria.Text;
+            categoria.Sigla = txtSiglaCategoria.Text;
+            if (categoria.Alterar())
+            {
+                MessageBox.Show("Categoria alterado com sucesso!");
+                LimparCampos();
+            }
+            else
+            {
+                MessageBox.Show("Falha ao alterar a categoria!");
+            }
+        }
+
+        private void DesbloquearControles()
+        {
+            txtNomeCategoria.Enabled = true;
+            txtSiglaCategoria.Enabled = true;
+        }
+
+        private void BloquearControles()
+        {
+            txtNomeCategoria.Enabled = false;
+            txtSiglaCategoria.Enabled = false;
+        }
+
+        private void LimparCampos()
+        {
+            txtNomeCategoria.Clear();
+            txtSiglaCategoria.Clear();
+        }
     }
 }
