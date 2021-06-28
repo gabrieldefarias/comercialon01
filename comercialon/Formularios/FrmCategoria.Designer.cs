@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnEditarAlterar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.txtSiglaCategoria = new System.Windows.Forms.TextBox();
             this.txtNomeCategoria = new System.Windows.Forms.TextBox();
@@ -36,8 +38,6 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnEditarAlterar = new System.Windows.Forms.Button();
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,10 +55,30 @@
             this.groupBox4.Controls.Add(this.label21);
             this.groupBox4.Location = new System.Drawing.Point(12, 12);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(236, 116);
+            this.groupBox4.Size = new System.Drawing.Size(223, 111);
             this.groupBox4.TabIndex = 21;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Categoria";
+            // 
+            // btnEditarAlterar
+            // 
+            this.btnEditarAlterar.Location = new System.Drawing.Point(106, 83);
+            this.btnEditarAlterar.Name = "btnEditarAlterar";
+            this.btnEditarAlterar.Size = new System.Drawing.Size(75, 23);
+            this.btnEditarAlterar.TabIndex = 8;
+            this.btnEditarAlterar.Text = "Editar";
+            this.btnEditarAlterar.UseVisualStyleBackColor = true;
+            this.btnEditarAlterar.Click += new System.EventHandler(this.btnEditarAlterar_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(115, 11);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "...";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button3
             // 
@@ -122,31 +142,11 @@
             this.label21.TabIndex = 0;
             this.label21.Text = "ID:";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(115, 11);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "...";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnEditarAlterar
-            // 
-            this.btnEditarAlterar.Location = new System.Drawing.Point(106, 83);
-            this.btnEditarAlterar.Name = "btnEditarAlterar";
-            this.btnEditarAlterar.Size = new System.Drawing.Size(75, 23);
-            this.btnEditarAlterar.TabIndex = 8;
-            this.btnEditarAlterar.Text = "Editar";
-            this.btnEditarAlterar.UseVisualStyleBackColor = true;
-            this.btnEditarAlterar.Click += new System.EventHandler(this.btnEditarAlterar_Click);
-            // 
             // FrmCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(262, 136);
+            this.ClientSize = new System.Drawing.Size(247, 135);
             this.Controls.Add(this.groupBox4);
             this.Name = "FrmCategoria";
             this.Text = "FrmCategoria";

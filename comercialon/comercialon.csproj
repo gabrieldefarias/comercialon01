@@ -190,6 +190,9 @@
     <None Include="Resources\Cancel.ico" />
     <None Include="Resources\Delete.ico" />
     <None Include="Resources\Edit.ico" />
+    <None Include="Resources\Home.ico" />
+    <None Include="Resources\Save.ico" />
+    <None Include="Resources\Search.ico" />
     <Content Include="script_mysql_comercialondb.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

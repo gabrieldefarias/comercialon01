@@ -55,7 +55,7 @@
             this.groupBox3.Controls.Add(this.label17);
             this.groupBox3.Location = new System.Drawing.Point(12, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(251, 115);
+            this.groupBox3.Size = new System.Drawing.Size(221, 113);
             this.groupBox3.TabIndex = 20;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Marca";
@@ -72,7 +72,7 @@
             // 
             // btnEditarAlterar
             // 
-            this.btnEditarAlterar.Location = new System.Drawing.Point(104, 82);
+            this.btnEditarAlterar.Location = new System.Drawing.Point(90, 82);
             this.btnEditarAlterar.Name = "btnEditarAlterar";
             this.btnEditarAlterar.Size = new System.Drawing.Size(75, 23);
             this.btnEditarAlterar.TabIndex = 7;
@@ -82,9 +82,10 @@
             // 
             // button2
             // 
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(9, 82);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(89, 23);
+            this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 6;
             this.button2.Text = "Inserir marca";
             this.button2.UseVisualStyleBackColor = true;
@@ -146,7 +147,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(272, 138);
+            this.ClientSize = new System.Drawing.Size(245, 137);
             this.Controls.Add(this.groupBox3);
             this.Name = "FrmMarcas";
             this.Text = "FrmMarcas";
