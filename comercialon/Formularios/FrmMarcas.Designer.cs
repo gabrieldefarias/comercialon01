@@ -150,7 +150,7 @@
             this.ClientSize = new System.Drawing.Size(245, 137);
             this.Controls.Add(this.groupBox3);
             this.Name = "FrmMarcas";
-            this.Text = "FrmMarcas";
+            this.Text = "Formulario Marcas";
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);

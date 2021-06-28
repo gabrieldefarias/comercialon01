@@ -42,7 +42,7 @@ namespace comercialon.classes
         public void Inserir()
         { }
         //========================================================================== INSERIR - FIM
-        public List<Usuario> ListarTodos()
+        public static List<Usuario> ListarTodos()
         {
             List<Usuario> lista = new List<Usuario>();
             return lista;

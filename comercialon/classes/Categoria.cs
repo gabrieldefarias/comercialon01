@@ -60,7 +60,7 @@ namespace comercialon.classes
             }
         }
         //========================================================================================FIM
-        public List<Categoria> ListarTodos() // LISTAR TODOS - INICIO
+        public static List<Categoria> ListarTodos() // LISTAR TODOS - INICIO
         {
             List<Categoria> lista = new List<Categoria>();
             string query = "select * from categorias";

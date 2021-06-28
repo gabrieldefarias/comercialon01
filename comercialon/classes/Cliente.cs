@@ -72,7 +72,7 @@ namespace comercialon.classes
             }
         }
         //========================================================================== ALTERAR - FIM
-        public List<Cliente> ListarTodos() // LISTAR CLIENTE - INICIO
+        public static List<Cliente> ListarTodos() // LISTAR CLIENTE - INICIO
         {
             List<Cliente> lista = new List<Cliente>();
             string query = "select * from clientes";

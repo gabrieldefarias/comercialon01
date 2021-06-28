@@ -45,7 +45,7 @@ namespace comercialon.classes
             }
         }
         //========================================================================================FIM
-        public List<Marca> ListarTodos() // LISTAR TODOS - INICIO
+        public static List<Marca> ListarTodos() // LISTAR TODOS - INICIO
         {
             List<Marca> lista = new List<Marca>();
             string query = "select * from marcas";

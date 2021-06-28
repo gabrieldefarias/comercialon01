@@ -149,7 +149,7 @@
             this.ClientSize = new System.Drawing.Size(247, 135);
             this.Controls.Add(this.groupBox4);
             this.Name = "FrmCategoria";
-            this.Text = "FrmCategoria";
+            this.Text = "Formulario Categoria";
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
