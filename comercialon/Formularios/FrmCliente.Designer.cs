@@ -63,8 +63,8 @@
             this.cmbTipo = new System.Windows.Forms.ComboBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnListar = new System.Windows.Forms.Button();
             this.btnEditarAlterar = new System.Windows.Forms.Button();
+            this.btnListar = new System.Windows.Forms.Button();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.clnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -445,17 +445,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // btnListar
-            // 
-            this.btnListar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnListar.Location = new System.Drawing.Point(534, 12);
-            this.btnListar.Name = "btnListar";
-            this.btnListar.Size = new System.Drawing.Size(99, 23);
-            this.btnListar.TabIndex = 19;
-            this.btnListar.Text = "&Listar";
-            this.btnListar.UseVisualStyleBackColor = true;
-            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
-            // 
             // btnEditarAlterar
             // 
             this.btnEditarAlterar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -466,6 +455,17 @@
             this.btnEditarAlterar.Text = "&Editar";
             this.btnEditarAlterar.UseVisualStyleBackColor = true;
             this.btnEditarAlterar.Click += new System.EventHandler(this.btnEditarAlterar_Click);
+            // 
+            // btnListar
+            // 
+            this.btnListar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnListar.Location = new System.Drawing.Point(534, 12);
+            this.btnListar.Name = "btnListar";
+            this.btnListar.Size = new System.Drawing.Size(99, 23);
+            this.btnListar.TabIndex = 19;
+            this.btnListar.Text = "&Listar";
+            this.btnListar.UseVisualStyleBackColor = true;
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             // 
             // dgvClientes
             // 
@@ -487,6 +487,7 @@
             this.dgvClientes.TabIndex = 16;
             this.dgvClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellClick);
             this.dgvClientes.DoubleClick += new System.EventHandler(this.dgvClientes_DoubleClick);
+            this.dgvClientes.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvClientes_KeyDown);
             // 
             // clnId
             // 
@@ -581,6 +582,7 @@
             this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnListar);
+            this.KeyPreview = true;
             this.Name = "Form1";
             this.Text = "Formulario Clientes";
             this.TransparencyKey = System.Drawing.Color.White;

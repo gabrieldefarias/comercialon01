@@ -302,10 +302,48 @@ namespace comercialon
                     dgvEnderecos.Rows[dgvEnderecos.Rows.Count - 1].Cells[0].Value = item.Tipo; // mostrar tipo de endereço
                     dgvEnderecos.Rows[dgvEnderecos.Rows.Count - 1].Cells[1].Value = item.Cep; // mostrar cep do endereço
                     StringBuilder endereco = new StringBuilder();
-                    endereco.Append(item.Logradouro); // mostrar logradouro
-                    endereco.Append(", " + item.Numero); // numero com ", " antes
-                    endereco.Append(" - " + item.Bairro); // bairro com " - " antes
+                    endereco.Append(item.Logradouro); // mostrar logradouro e
+                    endereco.Append(" _ Nº: " + item.Numero); // numero com ", " antes e
+                    endereco.Append(" _ bairro: " + item.Bairro); // bairro com " - " antes
                     dgvEnderecos.Rows[dgvEnderecos.Rows.Count - 1].Cells [2].Value = endereco;
+                }
+            }
+            else
+            {
+                dgvEnderecos.Rows.Add();
+                string mensagem = "Não há endereço cadastrado neste cliente!"; // mensagem mostrada quando não houver endereço
+                dgvEnderecos.Rows[dgvEnderecos.Rows.Count - 1].Cells[2].Value = mensagem; // Mostrar mensagem acima
+            }
+        }
+
+        private void dgvClientes_KeyDown(object sender, KeyEventArgs e)
+        {
+            int linha = 0;
+            if (e.KeyCode==Keys.Down && dgvClientes.CurrentRow.Index + 1 < dgvClientes.Rows.Count - 1)
+            {
+                linha = dgvClientes.CurrentRow.Index + 1;
+            }
+            if (e.KeyCode == Keys.Up && dgvClientes.CurrentRow.Index > 0)
+            {
+                linha = dgvClientes.CurrentRow.Index - 1;
+            }
+
+            dgvEnderecos.Rows.Clear(); // Limpar os campos do dataGread
+            int idCli = Convert.ToInt32(dgvClientes.Rows[linha].Cells[0].Value);
+            var listaEnd = Endereco.ListaEnderecos(idCli);
+            
+            if (listaEnd.Count > 0) // Clientes_id for maior que 0 mostrar o foreach
+            {
+                foreach (var item in listaEnd)
+                {
+                    dgvEnderecos.Rows.Add();
+                    dgvEnderecos.Rows[dgvEnderecos.Rows.Count - 1].Cells[0].Value = item.Tipo; // mostrar tipo de endereço
+                    dgvEnderecos.Rows[dgvEnderecos.Rows.Count - 1].Cells[1].Value = item.Cep; // mostrar cep do endereço
+                    StringBuilder endereco = new StringBuilder();
+                    endereco.Append(item.Logradouro); // mostrar logradouro e
+                    endereco.Append(" _ Nº: " + item.Numero); // numero com ", " antes e
+                    endereco.Append(" _ bairro: " + item.Bairro); // bairro com " - " antes
+                    dgvEnderecos.Rows[dgvEnderecos.Rows.Count - 1].Cells[2].Value = endereco;
                 }
             }
             else
