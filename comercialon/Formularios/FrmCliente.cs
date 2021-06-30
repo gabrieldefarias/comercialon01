@@ -294,25 +294,25 @@ namespace comercialon
             dgvEnderecos.Rows.Clear(); // Limpar os campos do dataGread
             int idCli = Convert.ToInt32(dgvClientes.Rows[e.RowIndex].Cells[0].Value);
             var listaEnd = Endereco.ListaEnderecos(idCli);
-            if (listaEnd.Count>0)
+            if (listaEnd.Count>0) // Clientes_id for maior que 0 mostrar o foreach
             {
                 foreach (var item in listaEnd)
                 {
                     dgvEnderecos.Rows.Add();
-                    dgvEnderecos.Rows[dgvEnderecos.Rows.Count - 1].Cells[0].Value = item.Tipo;
-                    dgvEnderecos.Rows[dgvEnderecos.Rows.Count - 1].Cells[1].Value = item.Cep;
+                    dgvEnderecos.Rows[dgvEnderecos.Rows.Count - 1].Cells[0].Value = item.Tipo; // mostrar tipo de endereço
+                    dgvEnderecos.Rows[dgvEnderecos.Rows.Count - 1].Cells[1].Value = item.Cep; // mostrar cep do endereço
                     StringBuilder endereco = new StringBuilder();
-                    endereco.Append(item.Logradouro);
-                    endereco.Append(", " + item.Numero);
-                    endereco.Append(" - " + item.Bairro);
+                    endereco.Append(item.Logradouro); // mostrar logradouro
+                    endereco.Append(", " + item.Numero); // numero com ", " antes
+                    endereco.Append(" - " + item.Bairro); // bairro com " - " antes
                     dgvEnderecos.Rows[dgvEnderecos.Rows.Count - 1].Cells [2].Value = endereco;
                 }
             }
             else
             {
                 dgvEnderecos.Rows.Add();
-                string mensagem = "Não há endereço cadastrado neste cliente!";
-                dgvEnderecos.Rows[dgvEnderecos.Rows.Count - 1].Cells[2].Value = mensagem;
+                string mensagem = "Não há endereço cadastrado neste cliente!"; // mensagem mostrada quando não houver endereço
+                dgvEnderecos.Rows[dgvEnderecos.Rows.Count - 1].Cells[2].Value = mensagem; // Mostrar mensagem acima
             }
         }
     }
