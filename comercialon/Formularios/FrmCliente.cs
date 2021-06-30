@@ -279,9 +279,41 @@ namespace comercialon
             }
         }
 
-        private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvEnderecos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
+        }
+
+        private void dgvClientes_DoubleClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvClientes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dgvEnderecos.Rows.Clear(); // Limpar os campos do dataGread
+            int idCli = Convert.ToInt32(dgvClientes.Rows[e.RowIndex].Cells[0].Value);
+            var listaEnd = Endereco.ListaEnderecos(idCli);
+            if (listaEnd.Count>0)
+            {
+                foreach (var item in listaEnd)
+                {
+                    dgvEnderecos.Rows.Add();
+                    dgvEnderecos.Rows[dgvEnderecos.Rows.Count - 1].Cells[0].Value = item.Tipo;
+                    dgvEnderecos.Rows[dgvEnderecos.Rows.Count - 1].Cells[1].Value = item.Cep;
+                    StringBuilder endereco = new StringBuilder();
+                    endereco.Append(item.Logradouro);
+                    endereco.Append(", " + item.Numero);
+                    endereco.Append(" - " + item.Bairro);
+                    dgvEnderecos.Rows[dgvEnderecos.Rows.Count - 1].Cells [2].Value = endereco;
+                }
+            }
+            else
+            {
+                dgvEnderecos.Rows.Add();
+                string mensagem = "Não há endereço cadastrado neste cliente!";
+                dgvEnderecos.Rows[dgvEnderecos.Rows.Count - 1].Cells[2].Value = mensagem;
+            }
         }
     }
 }

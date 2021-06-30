@@ -72,9 +72,14 @@
             this.clnEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clnTeleone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clnAtivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dgvEnderecos = new System.Windows.Forms.DataGridView();
+            this.clnTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnCep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnDadosEndereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEnderecos)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -90,7 +95,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(271, 54);
+            this.label2.Location = new System.Drawing.Point(256, 54);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(30, 13);
             this.label2.TabIndex = 1;
@@ -110,7 +115,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(271, 82);
+            this.label4.Location = new System.Drawing.Point(256, 82);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 13);
             this.label4.TabIndex = 3;
@@ -145,7 +150,7 @@
             // 
             // txtTelefone
             // 
-            this.txtTelefone.Location = new System.Drawing.Point(329, 79);
+            this.txtTelefone.Location = new System.Drawing.Point(314, 79);
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(83, 20);
             this.txtTelefone.TabIndex = 8;
@@ -163,7 +168,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(271, 29);
+            this.label6.Location = new System.Drawing.Point(256, 29);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(34, 13);
             this.label6.TabIndex = 10;
@@ -186,7 +191,7 @@
             this.chkAtivo.AutoSize = true;
             this.chkAtivo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chkAtivo.Enabled = false;
-            this.chkAtivo.Location = new System.Drawing.Point(311, 29);
+            this.chkAtivo.Location = new System.Drawing.Point(314, 29);
             this.chkAtivo.Name = "chkAtivo";
             this.chkAtivo.Size = new System.Drawing.Size(15, 14);
             this.chkAtivo.TabIndex = 11;
@@ -195,7 +200,7 @@
             // 
             // mskCpf
             // 
-            this.mskCpf.Location = new System.Drawing.Point(329, 51);
+            this.mskCpf.Location = new System.Drawing.Point(314, 51);
             this.mskCpf.Mask = "000.000.000-00";
             this.mskCpf.Name = "mskCpf";
             this.mskCpf.Size = new System.Drawing.Size(83, 20);
@@ -208,7 +213,6 @@
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.btnListar);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.btnEditarAlterar);
             this.groupBox1.Controls.Add(this.mskCpf);
@@ -423,7 +427,7 @@
             // btnCancelar
             // 
             this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelar.Location = new System.Drawing.Point(249, 286);
+            this.btnCancelar.Location = new System.Drawing.Point(168, 286);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 20;
@@ -444,9 +448,9 @@
             // btnListar
             // 
             this.btnListar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnListar.Location = new System.Drawing.Point(168, 286);
+            this.btnListar.Location = new System.Drawing.Point(534, 12);
             this.btnListar.Name = "btnListar";
-            this.btnListar.Size = new System.Drawing.Size(75, 23);
+            this.btnListar.Size = new System.Drawing.Size(99, 23);
             this.btnListar.TabIndex = 19;
             this.btnListar.Text = "&Listar";
             this.btnListar.UseVisualStyleBackColor = true;
@@ -475,12 +479,14 @@
             this.clnEmail,
             this.clnTeleone,
             this.clnAtivo});
-            this.dgvClientes.Location = new System.Drawing.Point(534, 12);
+            this.dgvClientes.Location = new System.Drawing.Point(534, 41);
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.RowHeadersVisible = false;
-            this.dgvClientes.Size = new System.Drawing.Size(605, 317);
+            this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvClientes.Size = new System.Drawing.Size(602, 237);
             this.dgvClientes.TabIndex = 16;
-            this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentClick);
+            this.dgvClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellClick);
+            this.dgvClientes.DoubleClick += new System.EventHandler(this.dgvClientes_DoubleClick);
             // 
             // clnId
             // 
@@ -525,13 +531,56 @@
             this.clnAtivo.Name = "clnAtivo";
             this.clnAtivo.Width = 40;
             // 
+            // dgvEnderecos
+            // 
+            this.dgvEnderecos.AllowUserToAddRows = false;
+            this.dgvEnderecos.AllowUserToDeleteRows = false;
+            this.dgvEnderecos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEnderecos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clnTipo,
+            this.clnCep,
+            this.clnDadosEndereco});
+            this.dgvEnderecos.Location = new System.Drawing.Point(534, 284);
+            this.dgvEnderecos.Name = "dgvEnderecos";
+            this.dgvEnderecos.ReadOnly = true;
+            this.dgvEnderecos.RowHeadersVisible = false;
+            this.dgvEnderecos.Size = new System.Drawing.Size(602, 45);
+            this.dgvEnderecos.TabIndex = 17;
+            this.dgvEnderecos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEnderecos_CellContentClick);
+            // 
+            // clnTipo
+            // 
+            this.clnTipo.Frozen = true;
+            this.clnTipo.HeaderText = "Tipo";
+            this.clnTipo.Name = "clnTipo";
+            this.clnTipo.ReadOnly = true;
+            this.clnTipo.Width = 80;
+            // 
+            // clnCep
+            // 
+            this.clnCep.Frozen = true;
+            this.clnCep.HeaderText = "CEP";
+            this.clnCep.Name = "clnCep";
+            this.clnCep.ReadOnly = true;
+            this.clnCep.Width = 80;
+            // 
+            // clnDadosEndereco
+            // 
+            this.clnDadosEndereco.Frozen = true;
+            this.clnDadosEndereco.HeaderText = "Endereço";
+            this.clnDadosEndereco.Name = "clnDadosEndereco";
+            this.clnDadosEndereco.ReadOnly = true;
+            this.clnDadosEndereco.Width = 440;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1149, 340);
+            this.ClientSize = new System.Drawing.Size(1148, 342);
+            this.Controls.Add(this.dgvEnderecos);
             this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btnListar);
             this.Name = "Form1";
             this.Text = "Formulario Clientes";
             this.TransparencyKey = System.Drawing.Color.White;
@@ -541,6 +590,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEnderecos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -591,6 +641,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clnEmail;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnTeleone;
         private System.Windows.Forms.DataGridViewCheckBoxColumn clnAtivo;
+        private System.Windows.Forms.DataGridView dgvEnderecos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clnTipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clnCep;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clnDadosEndereco;
     }
 }
 

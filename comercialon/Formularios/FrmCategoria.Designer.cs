@@ -55,14 +55,14 @@
             this.groupBox4.Controls.Add(this.label21);
             this.groupBox4.Location = new System.Drawing.Point(12, 12);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(223, 111);
+            this.groupBox4.Size = new System.Drawing.Size(225, 127);
             this.groupBox4.TabIndex = 21;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Categoria";
             // 
             // btnEditarAlterar
             // 
-            this.btnEditarAlterar.Location = new System.Drawing.Point(106, 83);
+            this.btnEditarAlterar.Location = new System.Drawing.Point(106, 89);
             this.btnEditarAlterar.Name = "btnEditarAlterar";
             this.btnEditarAlterar.Size = new System.Drawing.Size(75, 23);
             this.btnEditarAlterar.TabIndex = 8;
@@ -72,7 +72,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(115, 11);
+            this.button1.Location = new System.Drawing.Point(114, 17);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 7;
@@ -82,7 +82,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(9, 83);
+            this.button3.Location = new System.Drawing.Point(9, 89);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(91, 23);
             this.button3.TabIndex = 6;
@@ -92,7 +92,7 @@
             // 
             // txtSiglaCategoria
             // 
-            this.txtSiglaCategoria.Location = new System.Drawing.Point(115, 57);
+            this.txtSiglaCategoria.Location = new System.Drawing.Point(115, 63);
             this.txtSiglaCategoria.Name = "txtSiglaCategoria";
             this.txtSiglaCategoria.Size = new System.Drawing.Size(100, 20);
             this.txtSiglaCategoria.TabIndex = 5;
@@ -100,7 +100,7 @@
             // 
             // txtNomeCategoria
             // 
-            this.txtNomeCategoria.Location = new System.Drawing.Point(9, 57);
+            this.txtNomeCategoria.Location = new System.Drawing.Point(9, 63);
             this.txtNomeCategoria.Name = "txtNomeCategoria";
             this.txtNomeCategoria.Size = new System.Drawing.Size(100, 20);
             this.txtNomeCategoria.TabIndex = 4;
@@ -108,7 +108,7 @@
             // 
             // txtIdCategoria
             // 
-            this.txtIdCategoria.Location = new System.Drawing.Point(33, 13);
+            this.txtIdCategoria.Location = new System.Drawing.Point(32, 19);
             this.txtIdCategoria.Name = "txtIdCategoria";
             this.txtIdCategoria.ReadOnly = true;
             this.txtIdCategoria.Size = new System.Drawing.Size(76, 20);
@@ -118,7 +118,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(112, 41);
+            this.label19.Location = new System.Drawing.Point(112, 47);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(33, 13);
             this.label19.TabIndex = 2;
@@ -127,7 +127,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(6, 41);
+            this.label20.Location = new System.Drawing.Point(6, 47);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(38, 13);
             this.label20.TabIndex = 1;
@@ -136,7 +136,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(6, 16);
+            this.label21.Location = new System.Drawing.Point(6, 22);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(21, 13);
             this.label21.TabIndex = 0;
@@ -146,7 +146,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(247, 135);
+            this.ClientSize = new System.Drawing.Size(252, 151);
             this.Controls.Add(this.groupBox4);
             this.Name = "FrmCategoria";
             this.Text = "Formulario Categoria";
