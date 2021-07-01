@@ -66,8 +66,7 @@ namespace comercialon
             );
             cliente.Inserir();
 
-            Endereco endereco = new Endereco
-            (
+            Endereco endereco = new Endereco(
                 txtLogradouro.Text,
                 txtNumero.Text,
                 txtComplemento.Text,
@@ -75,7 +74,6 @@ namespace comercialon
                 txtBairro.Text,
                 txtCidade.Text,
                 cmbTipo.Text,
-                txtEstado.Text,
                 txtUF.Text
             );
             endereco.Inserir(cliente.Id);
@@ -174,11 +172,6 @@ namespace comercialon
         }
 
         private void txtCidade_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtEstado_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -352,6 +345,11 @@ namespace comercialon
                 string mensagem = "Não há endereço cadastrado neste cliente!"; // mensagem mostrada quando não houver endereço
                 dgvEnderecos.Rows[dgvEnderecos.Rows.Count - 1].Cells[2].Value = mensagem; // Mostrar mensagem acima
             }
+        }
+
+        private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

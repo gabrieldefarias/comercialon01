@@ -47,8 +47,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.txtCep = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.txtEstado = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.txtCidade = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtBairro = new System.Windows.Forms.TextBox();
@@ -230,7 +228,7 @@
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(516, 317);
+            this.groupBox1.Size = new System.Drawing.Size(409, 317);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Identificação";
@@ -242,8 +240,6 @@
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.txtCep);
             this.groupBox2.Controls.Add(this.label14);
-            this.groupBox2.Controls.Add(this.txtEstado);
-            this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.txtCidade);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.txtBairro);
@@ -258,7 +254,7 @@
             this.groupBox2.Controls.Add(this.cmbTipo);
             this.groupBox2.Location = new System.Drawing.Point(6, 120);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(502, 160);
+            this.groupBox2.Size = new System.Drawing.Size(397, 160);
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Endereço";
@@ -266,7 +262,7 @@
             // 
             // txtUF
             // 
-            this.txtUF.Location = new System.Drawing.Point(396, 129);
+            this.txtUF.Location = new System.Drawing.Point(290, 129);
             this.txtUF.Name = "txtUF";
             this.txtUF.Size = new System.Drawing.Size(100, 20);
             this.txtUF.TabIndex = 17;
@@ -275,7 +271,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(393, 113);
+            this.label15.Location = new System.Drawing.Point(287, 113);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(24, 13);
             this.label15.TabIndex = 16;
@@ -297,23 +293,6 @@
             this.label14.Size = new System.Drawing.Size(29, 13);
             this.label14.TabIndex = 14;
             this.label14.Text = "Cep:";
-            // 
-            // txtEstado
-            // 
-            this.txtEstado.Location = new System.Drawing.Point(290, 129);
-            this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(100, 20);
-            this.txtEstado.TabIndex = 13;
-            this.txtEstado.TextChanged += new System.EventHandler(this.txtEstado_TextChanged);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(287, 113);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(43, 13);
-            this.label13.TabIndex = 12;
-            this.label13.Text = "Estado:";
             // 
             // txtCidade
             // 
@@ -459,7 +438,7 @@
             // btnListar
             // 
             this.btnListar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnListar.Location = new System.Drawing.Point(534, 12);
+            this.btnListar.Location = new System.Drawing.Point(427, 12);
             this.btnListar.Name = "btnListar";
             this.btnListar.Size = new System.Drawing.Size(99, 23);
             this.btnListar.TabIndex = 19;
@@ -479,13 +458,14 @@
             this.clnEmail,
             this.clnTeleone,
             this.clnAtivo});
-            this.dgvClientes.Location = new System.Drawing.Point(534, 41);
+            this.dgvClientes.Location = new System.Drawing.Point(427, 41);
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.RowHeadersVisible = false;
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvClientes.Size = new System.Drawing.Size(602, 237);
             this.dgvClientes.TabIndex = 16;
             this.dgvClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellClick);
+            this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentClick);
             this.dgvClientes.DoubleClick += new System.EventHandler(this.dgvClientes_DoubleClick);
             this.dgvClientes.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvClientes_KeyDown);
             // 
@@ -541,7 +521,7 @@
             this.clnTipo,
             this.clnCep,
             this.clnDadosEndereco});
-            this.dgvEnderecos.Location = new System.Drawing.Point(534, 284);
+            this.dgvEnderecos.Location = new System.Drawing.Point(427, 284);
             this.dgvEnderecos.Name = "dgvEnderecos";
             this.dgvEnderecos.ReadOnly = true;
             this.dgvEnderecos.RowHeadersVisible = false;
@@ -577,7 +557,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1148, 342);
+            this.ClientSize = new System.Drawing.Size(1039, 342);
             this.Controls.Add(this.dgvEnderecos);
             this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.groupBox1);
@@ -628,8 +608,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtCep;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txtEstado;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtUF;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button button1;

@@ -16,8 +16,7 @@ namespace comercialon.classes
         public string Cep { get; set; }
         public string Bairro { get; set; }
         public string Cidade { get; set; }
-        public string Estado { get; set; }
-        public string SiglaEstado { get; set; }
+        public string Uf { get; set; }
         public string Tipo { get; set; }
         //======================================================================================== // gerando os construtores
 
@@ -32,8 +31,7 @@ namespace comercialon.classes
             string bairro,
             string cidade,
             string tipo,
-            string estado = null,
-            string siglaEstado = null
+            string uf = null
         )
         {
             Logradouro = logradouro;
@@ -43,8 +41,7 @@ namespace comercialon.classes
             Bairro = bairro;
             Cidade = cidade;
             Tipo = tipo;
-            Estado = estado; // não obrigatório por causa do "null" de "string estado = null"
-            SiglaEstado = siglaEstado; // não obrigatório por causa do "null" de "string siglaEstado = null"
+            Uf = uf; // não obrigatório por causa do "null" de "string siglaEstado = null"
         }
         
         public Endereco(
@@ -55,8 +52,7 @@ namespace comercialon.classes
             string cep,
             string bairro,
             string cidade,
-            string estado,
-            string siglaEstado,
+            string uf,
             string tipo)
         {
             this.idCliente = idCliente;
@@ -66,8 +62,7 @@ namespace comercialon.classes
             Cep = cep;
             Bairro = bairro;
             Cidade = cidade;
-            Estado = estado;
-            SiglaEstado = siglaEstado;
+            Uf = uf;
             Tipo = tipo;
         }
 
@@ -85,8 +80,7 @@ namespace comercialon.classes
                     "'"+Complemento+"', " +
                     "'"+Bairro+"', " +
                     "'"+Cidade+"', " +
-                    "'"+Estado+"', " +
-                    "'"+SiglaEstado+"', " +
+                    "'"+Uf+"', " +
                     "'"+Tipo+"'" +
                 ")";
             var cmd = Banco.Abrir();
@@ -131,8 +125,7 @@ namespace comercialon.classes
                     dr.GetString(5),
                     dr.GetString(6),
                     dr.GetString(7),
-                    dr.GetString(8),
-                    dr.GetString(9)
+                    dr.GetString(8)
                 ));
             }
             return lista;

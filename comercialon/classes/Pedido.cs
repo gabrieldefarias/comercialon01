@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace comercialon.classes
 {
-    class Pedido
+    public class Pedido
     {
+
     }
 }

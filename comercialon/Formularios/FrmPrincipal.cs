@@ -69,5 +69,12 @@ namespace comercialon.Formularios
             frmMarcas.MdiParent = this;
             frmMarcas.Show();
         }
+
+        private void tsmCadastroUsuarioNovo_Click(object sender, EventArgs e)
+        {
+            FrmUsuarios frmUsuario = new FrmUsuarios();
+            frmUsuario.MdiParent = this;
+            frmUsuario.Show();
+        }
     }
 }
