@@ -26,7 +26,7 @@ namespace comercialon.classes
             Desconto = desconto;
             Usuario = usuario;
             Cliente = cliente;
-            this.itensPedido = itensPedido; // pode ser nulo
+            this.itensPedido = itensPedido; // nulo
         }
 
         public Pedido(int id, int data, string situacao, double desconto, Usuario usuario, Cliente cliente, List<ItemPedido> itensPedido = null)
@@ -37,7 +37,7 @@ namespace comercialon.classes
             Desconto = desconto;
             Usuario = usuario;
             Cliente = cliente;
-            this.itensPedido = itensPedido; // pode ser nulo
+            this.itensPedido = itensPedido; // nulo
         }
         //======================================================================================== // metodos de classe
 
