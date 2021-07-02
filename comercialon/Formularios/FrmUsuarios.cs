@@ -33,6 +33,7 @@ namespace comercialon.Formularios
             txtId.Text = usuario.Id.ToString();
             MessageBox.Show("Usuario " + usuario.Id + " inserir");
             LimparCampos();
+            btnListar_Click(sender, e);
         }
         private void LimparCampos()
         {
@@ -124,6 +125,7 @@ namespace comercialon.Formularios
             {
                 MessageBox.Show("Usuario alterado com sucesso!");
                 LimparCampos();
+                btnListar_Click(sender, e);
             }
             else
             {
@@ -136,7 +138,7 @@ namespace comercialon.Formularios
 
         }
 
-        private void btnListar_Click(object sender, EventArgs e)
+        private void btnListar_Click(object sender, EventArgs e) // botão listar clientes
         {
             dgvUsuarios.Rows.Clear();
             var lista = Usuario.ListarTodos();
@@ -146,10 +148,16 @@ namespace comercialon.Formularios
                 dgvUsuarios.Rows[dgvUsuarios.Rows.Count - 1].Cells[0].Value = item.Id;
                 dgvUsuarios.Rows[dgvUsuarios.Rows.Count - 1].Cells[1].Value = item.Nome;
                 dgvUsuarios.Rows[dgvUsuarios.Rows.Count - 1].Cells[2].Value = item.Email;
-                dgvUsuarios.Rows[dgvUsuarios.Rows.Count - 1].Cells[3].Value = item.Nivel;
-                dgvUsuarios.Rows[dgvUsuarios.Rows.Count - 1].Cells[4].Value = item.Cpf;
-                dgvUsuarios.Rows[dgvUsuarios.Rows.Count - 1].Cells[5].Value = item.Ativo;
+                dgvUsuarios.Rows[dgvUsuarios.Rows.Count - 1].Cells[3].Value = item.Senha;
+                dgvUsuarios.Rows[dgvUsuarios.Rows.Count - 1].Cells[4].Value = item.Nivel;
+                dgvUsuarios.Rows[dgvUsuarios.Rows.Count - 1].Cells[5].Value = item.Cpf;
+                dgvUsuarios.Rows[dgvUsuarios.Rows.Count - 1].Cells[6].Value = item.Ativo;
             }
+        }
+
+        private void FrmUsuarios_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -70,8 +70,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dgvUsuarios);
-            this.groupBox2.Controls.Add(this.btnListar);
             this.groupBox2.Controls.Add(this.btnEditarAlterar);
             this.groupBox2.Controls.Add(this.mskCpf);
             this.groupBox2.Controls.Add(this.btnInserir);
@@ -91,13 +89,15 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1014, 286);
+            this.groupBox2.Size = new System.Drawing.Size(329, 286);
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Formulario";
+            this.groupBox2.Text = "Formulario Usuarios";
             // 
             // dgvUsuarios
             // 
+            this.dgvUsuarios.AllowUserToAddRows = false;
+            this.dgvUsuarios.AllowUserToDeleteRows = false;
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clnId,
@@ -107,10 +107,11 @@
             this.clnNivel,
             this.clnCpf,
             this.clnAtivo});
-            this.dgvUsuarios.Location = new System.Drawing.Point(337, 46);
+            this.dgvUsuarios.Location = new System.Drawing.Point(347, 41);
             this.dgvUsuarios.Name = "dgvUsuarios";
+            this.dgvUsuarios.ReadOnly = true;
             this.dgvUsuarios.RowHeadersVisible = false;
-            this.dgvUsuarios.Size = new System.Drawing.Size(662, 227);
+            this.dgvUsuarios.Size = new System.Drawing.Size(662, 257);
             this.dgvUsuarios.TabIndex = 19;
             this.dgvUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -164,13 +165,13 @@
             // clnAtivo
             // 
             this.clnAtivo.Frozen = true;
-            this.clnAtivo.HeaderText = "Column1";
+            this.clnAtivo.HeaderText = "Ativo";
             this.clnAtivo.Name = "clnAtivo";
             this.clnAtivo.ReadOnly = true;
             // 
             // btnListar
             // 
-            this.btnListar.Location = new System.Drawing.Point(337, 19);
+            this.btnListar.Location = new System.Drawing.Point(347, 12);
             this.btnListar.Name = "btnListar";
             this.btnListar.Size = new System.Drawing.Size(75, 23);
             this.btnListar.TabIndex = 18;
@@ -219,7 +220,7 @@
             // chkAtivo
             // 
             this.chkAtivo.AutoSize = true;
-            this.chkAtivo.Location = new System.Drawing.Point(221, 43);
+            this.chkAtivo.Location = new System.Drawing.Point(258, 46);
             this.chkAtivo.Name = "chkAtivo";
             this.chkAtivo.Size = new System.Drawing.Size(15, 14);
             this.chkAtivo.TabIndex = 13;
@@ -259,7 +260,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(218, 27);
+            this.label6.Location = new System.Drawing.Point(218, 46);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(34, 13);
             this.label6.TabIndex = 7;
@@ -320,10 +321,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1036, 309);
+            this.ClientSize = new System.Drawing.Size(1019, 307);
+            this.Controls.Add(this.dgvUsuarios);
+            this.Controls.Add(this.btnListar);
             this.Controls.Add(this.groupBox2);
             this.Name = "FrmUsuarios";
             this.Text = "Formulario Usuarios";
+            this.Load += new System.EventHandler(this.FrmUsuarios_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
@@ -352,6 +356,7 @@
         private System.Windows.Forms.MaskedTextBox mskCpf;
         private System.Windows.Forms.Button btnEditarAlterar;
         private System.Windows.Forms.DataGridView dgvUsuarios;
+        private System.Windows.Forms.Button btnListar;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnId;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnEmail;
@@ -359,6 +364,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clnNivel;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnCpf;
         private System.Windows.Forms.DataGridViewCheckBoxColumn clnAtivo;
-        private System.Windows.Forms.Button btnListar;
     }
 }
