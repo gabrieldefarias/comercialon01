@@ -49,6 +49,8 @@
             this.tsmRelatorios = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmConfiguracoes = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmAjuda = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmOperacoesPedido = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmOperacoesPedidoNovo = new System.Windows.Forms.ToolStripMenuItem();
             this.menuPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -137,7 +139,7 @@
             // 
             this.tsmCadastroUsuarioNovo.Image = global::comercialon.Properties.Resources.Add;
             this.tsmCadastroUsuarioNovo.Name = "tsmCadastroUsuarioNovo";
-            this.tsmCadastroUsuarioNovo.Size = new System.Drawing.Size(103, 22);
+            this.tsmCadastroUsuarioNovo.Size = new System.Drawing.Size(180, 22);
             this.tsmCadastroUsuarioNovo.Text = "&Novo";
             this.tsmCadastroUsuarioNovo.Click += new System.EventHandler(this.tsmCadastroUsuarioNovo_Click);
             // 
@@ -145,7 +147,7 @@
             // 
             this.tsmCadastroUsuarioLista.Image = global::comercialon.Properties.Resources.Search;
             this.tsmCadastroUsuarioLista.Name = "tsmCadastroUsuarioLista";
-            this.tsmCadastroUsuarioLista.Size = new System.Drawing.Size(103, 22);
+            this.tsmCadastroUsuarioLista.Size = new System.Drawing.Size(180, 22);
             this.tsmCadastroUsuarioLista.Text = "&Lista";
             // 
             // tsmCadastrosMarcas
@@ -163,7 +165,7 @@
             // 
             this.tsmCadastrosMarcasNovo.Image = global::comercialon.Properties.Resources.Add;
             this.tsmCadastrosMarcasNovo.Name = "tsmCadastrosMarcasNovo";
-            this.tsmCadastrosMarcasNovo.Size = new System.Drawing.Size(103, 22);
+            this.tsmCadastrosMarcasNovo.Size = new System.Drawing.Size(180, 22);
             this.tsmCadastrosMarcasNovo.Text = "&Novo";
             this.tsmCadastrosMarcasNovo.Click += new System.EventHandler(this.tsmCadastrosMarcasNovo_Click);
             // 
@@ -171,7 +173,7 @@
             // 
             this.tsmCadastrosMarcasLista.Image = global::comercialon.Properties.Resources.Search;
             this.tsmCadastrosMarcasLista.Name = "tsmCadastrosMarcasLista";
-            this.tsmCadastrosMarcasLista.Size = new System.Drawing.Size(103, 22);
+            this.tsmCadastrosMarcasLista.Size = new System.Drawing.Size(180, 22);
             this.tsmCadastrosMarcasLista.Text = "&Lista";
             // 
             // tsmCadastrosCategorias
@@ -202,8 +204,11 @@
             // 
             // tsmOperacoes
             // 
+            this.tsmOperacoes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmOperacoesPedido});
+            this.tsmOperacoes.Image = global::comercialon.Properties.Resources.Search;
             this.tsmOperacoes.Name = "tsmOperacoes";
-            this.tsmOperacoes.Size = new System.Drawing.Size(75, 20);
+            this.tsmOperacoes.Size = new System.Drawing.Size(91, 20);
             this.tsmOperacoes.Text = "&Operações";
             // 
             // tsmMovimento
@@ -220,9 +225,8 @@
             // 
             // tsmConfiguracoes
             // 
-            this.tsmConfiguracoes.Image = global::comercialon.Properties.Resources.Edit;
             this.tsmConfiguracoes.Name = "tsmConfiguracoes";
-            this.tsmConfiguracoes.Size = new System.Drawing.Size(112, 20);
+            this.tsmConfiguracoes.Size = new System.Drawing.Size(96, 20);
             this.tsmConfiguracoes.Text = "Con&figurações";
             // 
             // tsmAjuda
@@ -230,6 +234,22 @@
             this.tsmAjuda.Name = "tsmAjuda";
             this.tsmAjuda.Size = new System.Drawing.Size(50, 20);
             this.tsmAjuda.Text = "&Ajuda";
+            // 
+            // tsmOperacoesPedido
+            // 
+            this.tsmOperacoesPedido.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmOperacoesPedidoNovo});
+            this.tsmOperacoesPedido.Image = global::comercialon.Properties.Resources.Edit;
+            this.tsmOperacoesPedido.Name = "tsmOperacoesPedido";
+            this.tsmOperacoesPedido.Size = new System.Drawing.Size(180, 22);
+            this.tsmOperacoesPedido.Text = "&Pedido";
+            // 
+            // tsmOperacoesPedidoNovo
+            // 
+            this.tsmOperacoesPedidoNovo.Image = global::comercialon.Properties.Resources.Add;
+            this.tsmOperacoesPedidoNovo.Name = "tsmOperacoesPedidoNovo";
+            this.tsmOperacoesPedidoNovo.Size = new System.Drawing.Size(180, 22);
+            this.tsmOperacoesPedidoNovo.Text = "&Novo";
             // 
             // FrmPrincipal
             // 
@@ -275,5 +295,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmCadastrosCategoriasLista;
         private System.Windows.Forms.ToolStripMenuItem tsmCadastroUsuarioNovo;
         private System.Windows.Forms.ToolStripMenuItem tsmCadastroUsuarioLista;
+        private System.Windows.Forms.ToolStripMenuItem tsmOperacoesPedido;
+        private System.Windows.Forms.ToolStripMenuItem tsmOperacoesPedidoNovo;
     }
 }
