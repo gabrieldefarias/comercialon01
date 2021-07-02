@@ -102,6 +102,7 @@
             this.tsmCadastrosProdutos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmCadastrosProdutosNovo,
             this.tsmCadastrosProdutosLista});
+            this.tsmCadastrosProdutos.Image = global::comercialon.Properties.Resources.Edit;
             this.tsmCadastrosProdutos.Name = "tsmCadastrosProdutos";
             this.tsmCadastrosProdutos.Size = new System.Drawing.Size(180, 22);
             this.tsmCadastrosProdutos.Text = "&Produtos";
@@ -111,7 +112,7 @@
             // 
             this.tsmCadastrosProdutosNovo.Image = global::comercialon.Properties.Resources.Add;
             this.tsmCadastrosProdutosNovo.Name = "tsmCadastrosProdutosNovo";
-            this.tsmCadastrosProdutosNovo.Size = new System.Drawing.Size(103, 22);
+            this.tsmCadastrosProdutosNovo.Size = new System.Drawing.Size(180, 22);
             this.tsmCadastrosProdutosNovo.Text = "&Novo";
             this.tsmCadastrosProdutosNovo.Click += new System.EventHandler(this.tsmCadastrosProdutosNovo_Click_1);
             // 
@@ -119,7 +120,7 @@
             // 
             this.tsmCadastrosProdutosLista.Image = global::comercialon.Properties.Resources.Search;
             this.tsmCadastrosProdutosLista.Name = "tsmCadastrosProdutosLista";
-            this.tsmCadastrosProdutosLista.Size = new System.Drawing.Size(103, 22);
+            this.tsmCadastrosProdutosLista.Size = new System.Drawing.Size(180, 22);
             this.tsmCadastrosProdutosLista.Text = "&Lista";
             // 
             // tsmCadastrosUsuarios
@@ -136,7 +137,7 @@
             // 
             this.tsmCadastroUsuarioNovo.Image = global::comercialon.Properties.Resources.Add;
             this.tsmCadastroUsuarioNovo.Name = "tsmCadastroUsuarioNovo";
-            this.tsmCadastroUsuarioNovo.Size = new System.Drawing.Size(180, 22);
+            this.tsmCadastroUsuarioNovo.Size = new System.Drawing.Size(103, 22);
             this.tsmCadastroUsuarioNovo.Text = "&Novo";
             this.tsmCadastroUsuarioNovo.Click += new System.EventHandler(this.tsmCadastroUsuarioNovo_Click);
             // 
@@ -144,7 +145,7 @@
             // 
             this.tsmCadastroUsuarioLista.Image = global::comercialon.Properties.Resources.Search;
             this.tsmCadastroUsuarioLista.Name = "tsmCadastroUsuarioLista";
-            this.tsmCadastroUsuarioLista.Size = new System.Drawing.Size(180, 22);
+            this.tsmCadastroUsuarioLista.Size = new System.Drawing.Size(103, 22);
             this.tsmCadastroUsuarioLista.Text = "&Lista";
             // 
             // tsmCadastrosMarcas
@@ -188,7 +189,7 @@
             // 
             this.tsmCadastrosCategoriasNovo.Image = global::comercialon.Properties.Resources.Add;
             this.tsmCadastrosCategoriasNovo.Name = "tsmCadastrosCategoriasNovo";
-            this.tsmCadastrosCategoriasNovo.Size = new System.Drawing.Size(103, 22);
+            this.tsmCadastrosCategoriasNovo.Size = new System.Drawing.Size(180, 22);
             this.tsmCadastrosCategoriasNovo.Text = "&Novo";
             this.tsmCadastrosCategoriasNovo.Click += new System.EventHandler(this.tsmCadastrosCategoriasNovo_Click);
             // 
@@ -196,7 +197,7 @@
             // 
             this.tsmCadastrosCategoriasLista.Image = global::comercialon.Properties.Resources.Search;
             this.tsmCadastrosCategoriasLista.Name = "tsmCadastrosCategoriasLista";
-            this.tsmCadastrosCategoriasLista.Size = new System.Drawing.Size(103, 22);
+            this.tsmCadastrosCategoriasLista.Size = new System.Drawing.Size(180, 22);
             this.tsmCadastrosCategoriasLista.Text = "&Lista";
             // 
             // tsmOperacoes

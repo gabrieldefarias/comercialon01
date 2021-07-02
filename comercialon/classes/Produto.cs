@@ -10,47 +10,63 @@ namespace comercialon.classes
     {
         public int Id { get; set; }
         public string Descricao { get; set; }
-        public double Preco { get; set; }
+        public double ValorUnitario { get; set; }
+        public String UnidadeVenda { get; set; }
+        public string Codbar { get; set; }
         public double Desconto { get; set; }
         public bool Descontinuado { get; set; }
+        public Marca Marca { get; set; }
+        public Categoria Categoria { get; set; }
         //======================================================================================== // gerando os construtores
-
         public Produto()
-        {}
+        { }
 
-        public Produto(int id, string descricao, double preco, double desconto, bool descontinuado)
+        public Produto(
+            int id, string descricao, double valorUnitario, string unidadeVenda, string codbar, double desconto, bool descontinuado, Marca marca, Categoria categoria)
         {
             Id = id;
             Descricao = descricao;
-            Preco = preco;
+            ValorUnitario = valorUnitario;
+            UnidadeVenda = unidadeVenda;
+            Codbar = codbar;
             Desconto = desconto;
             Descontinuado = descontinuado;
+            Marca = marca;
+            Categoria = categoria;
         }
 
-        public Produto(string descricao, double preco, double desconto, bool descontinuado)
+        public Produto(
+            string descricao, double valorUnitario, string unidadeVenda, string codbar, double desconto, bool descontinuado, Marca marca, Categoria categoria)
         {
             Descricao = descricao;
-            Preco = preco;
+            ValorUnitario = valorUnitario;
+            UnidadeVenda = unidadeVenda;
+            Codbar = codbar;
             Desconto = desconto;
             Descontinuado = descontinuado;
+            Marca = marca;
+            Categoria = categoria;
         }
         //======================================================================================== // metodos de classe
-
         public void Inserir()
         { }
-
-        public List<Produto> ListarTodos()
+        //======================================================================================== Inserir FIM
+        public static List<Produto> ListarTodos()
         {
             List<Produto> lista = new List<Produto>();
+
             return lista;
         }
-
+        //======================================================================================== ListarTodos FIM
+        public void BuscarPorId(int id)
+        { }
+        //======================================================================================== BuscarPorId FIM
+        public void BuscarPorCodbar(int id)
+        { }
+        //======================================================================================== BuscarPorCodbar FIM
         public bool Alterar(int id)
         {
             return true;
         }
-
-        public void BuscarId(int id)
-        { }
     }
 }

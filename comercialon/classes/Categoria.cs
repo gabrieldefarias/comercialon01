@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace comercialon.classes
 {
-    class Categoria
+    public class Categoria
     { // declaração de propriedades
         public int Id { get; set; }
         public String Nome { get; set; }

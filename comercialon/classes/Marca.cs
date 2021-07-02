@@ -28,7 +28,6 @@ namespace comercialon.classes
             Nome = nome;
             Sigla = sigla;
         }
-
         //======================================================================================== // métodos da classe
         public void Inserir() // INSERIR - INICIO
         {

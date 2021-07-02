@@ -106,5 +106,10 @@ namespace comercialon.Formularios
             txtNomeMarca.Clear();
             txtSigla.Clear();
         }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

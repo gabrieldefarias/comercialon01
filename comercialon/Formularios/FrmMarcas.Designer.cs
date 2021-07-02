@@ -55,14 +55,15 @@
             this.groupBox3.Controls.Add(this.label17);
             this.groupBox3.Location = new System.Drawing.Point(12, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(221, 129);
+            this.groupBox3.Size = new System.Drawing.Size(225, 143);
             this.groupBox3.TabIndex = 20;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Marca";
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(115, 16);
+            this.button1.Location = new System.Drawing.Point(90, 35);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 8;
@@ -72,7 +73,7 @@
             // 
             // btnEditarAlterar
             // 
-            this.btnEditarAlterar.Location = new System.Drawing.Point(90, 87);
+            this.btnEditarAlterar.Location = new System.Drawing.Point(90, 111);
             this.btnEditarAlterar.Name = "btnEditarAlterar";
             this.btnEditarAlterar.Size = new System.Drawing.Size(75, 23);
             this.btnEditarAlterar.TabIndex = 7;
@@ -83,7 +84,7 @@
             // button2
             // 
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(9, 87);
+            this.button2.Location = new System.Drawing.Point(9, 111);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 6;
@@ -93,7 +94,7 @@
             // 
             // txtSigla
             // 
-            this.txtSigla.Location = new System.Drawing.Point(115, 61);
+            this.txtSigla.Location = new System.Drawing.Point(115, 85);
             this.txtSigla.Name = "txtSigla";
             this.txtSigla.Size = new System.Drawing.Size(100, 20);
             this.txtSigla.TabIndex = 5;
@@ -101,7 +102,7 @@
             // 
             // txtIdMarca
             // 
-            this.txtIdMarca.Location = new System.Drawing.Point(33, 18);
+            this.txtIdMarca.Location = new System.Drawing.Point(9, 37);
             this.txtIdMarca.Name = "txtIdMarca";
             this.txtIdMarca.ReadOnly = true;
             this.txtIdMarca.Size = new System.Drawing.Size(76, 20);
@@ -111,7 +112,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(112, 45);
+            this.label18.Location = new System.Drawing.Point(112, 69);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(33, 13);
             this.label18.TabIndex = 2;
@@ -119,7 +120,7 @@
             // 
             // txtNomeMarca
             // 
-            this.txtNomeMarca.Location = new System.Drawing.Point(9, 61);
+            this.txtNomeMarca.Location = new System.Drawing.Point(9, 85);
             this.txtNomeMarca.Name = "txtNomeMarca";
             this.txtNomeMarca.Size = new System.Drawing.Size(100, 20);
             this.txtNomeMarca.TabIndex = 4;
@@ -137,7 +138,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(6, 45);
+            this.label17.Location = new System.Drawing.Point(6, 69);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(38, 13);
             this.label17.TabIndex = 1;
@@ -147,7 +148,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(244, 151);
+            this.ClientSize = new System.Drawing.Size(249, 162);
             this.Controls.Add(this.groupBox3);
             this.Name = "FrmMarcas";
             this.Text = "Formulario Marcas";
