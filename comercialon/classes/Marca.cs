@@ -15,7 +15,7 @@ namespace comercialon.classes
         //======================================================================================== // gerando os construtores
         public Marca()
         { }
-        
+
         public Marca(int id, string nome, string sigla)
         {
             Id = id;
@@ -37,7 +37,7 @@ namespace comercialon.classes
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.CommandText = "insert " +
                     "marcas(nome, sigla) " +
-                    "values('"+Nome+"', '"+Sigla+"');";
+                    "values('" + Nome + "', '" + Sigla + "');";
                 cmd.ExecuteNonQuery();
                 cmd.CommandText = "select @@identity";
                 Id = Convert.ToInt32(cmd.ExecuteScalar());
@@ -79,7 +79,7 @@ namespace comercialon.classes
         public bool Alterar()
         {
             var cmd = Banco.Abrir();
-            cmd.CommandText = "update marcas set nome = '"+Nome+"', sigla = '"+Sigla+"' where id = " + Id;
+            cmd.CommandText = "update marcas set nome = '" + Nome + "', sigla = '" + Sigla + "' where id = " + Id;
             int ret = cmd.ExecuteNonQuery();
             if (ret == 1)
             {
